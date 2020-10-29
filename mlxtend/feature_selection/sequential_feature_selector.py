@@ -535,11 +535,12 @@ class SequentialFeatureSelector(_BaseXComposition, MetaEstimatorMixin):
                     ))
                     sys.stderr.flush()
                 elif self.verbose > 1:
-                    sys.stderr.write('\n[%s] Features: %d/%s -- score: %s' % (
+                    sys.stderr.write('\n[%s] Features: %d/%s -- score: %s; feature_idx: %s' % (
                         datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                         len(k_idx),
                         k_to_select,
-                        k_score
+                        k_score,
+                        k_idx
                     ))
 
                 if self._TESTING_INTERRUPT_MODE:
